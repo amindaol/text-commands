@@ -7,8 +7,14 @@ public class WrapLinesTextCommand extends WrapTextCommand {
   }
 
   @Override
-  public execute(String text) {
-    return
+  public String execute(String text) {
+    String[] lines = text.split("\n");
+
+    StringBuilder wrappedText = new StringBuilder();
+    for (String line : lines) {
+      wrappedText.append(getOpening()).append(line).append(getEnd()).append("\n");
+    }
+    return wrappedText.toString().stripTrailing();
   }
 
 }

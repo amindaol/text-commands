@@ -1,6 +1,6 @@
 package edu.ntnu.idi.idatt;
 
-public class WrapTextCommand {
+public class WrapTextCommand implements TextCommand {
 
   private final String opening;
   private final String end;

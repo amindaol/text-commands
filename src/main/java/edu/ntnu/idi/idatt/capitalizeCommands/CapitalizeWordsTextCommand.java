@@ -1,4 +1,4 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.capitalizeCommands;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

@@ -1,4 +1,6 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.wrapCommands;
+
+import edu.ntnu.idi.idatt.textCommand.TextCommand;
 
 public class WrapTextCommand implements TextCommand {
 

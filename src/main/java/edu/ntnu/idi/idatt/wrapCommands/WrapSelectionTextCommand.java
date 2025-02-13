@@ -1,4 +1,4 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.wrapCommands;
 
 public class WrapSelectionTextCommand extends WrapTextCommand {
 

@@ -1,4 +1,6 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.replaceCommands;
+
+import edu.ntnu.idi.idatt.textCommand.TextCommand;
 
 public class ReplaceTextCommand implements TextCommand {
 

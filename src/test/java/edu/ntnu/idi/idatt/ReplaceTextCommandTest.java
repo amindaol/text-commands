@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import edu.ntnu.idi.idatt.textCommand.TextCommand;
 
+import edu.ntnu.idi.idatt.replaceCommands.ReplaceTextCommand;
+
 
 public class ReplaceTextCommandTest {
 

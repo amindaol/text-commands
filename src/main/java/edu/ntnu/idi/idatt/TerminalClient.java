@@ -19,7 +19,7 @@ public class TerminalClient {
     ));
 
     String result = script.execute(text);
-    System.out.println("Processed text: " + result);
+    System.out.println("Processed text:" + result);
 
     scanner.close();
   }

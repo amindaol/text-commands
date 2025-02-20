@@ -18,11 +18,29 @@ public class ReplaceTextCommandTest {
   }
 
   @Test
+  void testReplaceTextCommandWithNoMatch() {
+    ReplaceTextCommand command = new ReplaceTextCommand("bye", "hi");
+    assertEquals("hello world", command.execute("hello world"));
+  }
+
+  @Test
   void testReplaceTextCommandWithNull() {
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
         new ReplaceTextCommand(null, "hi")
     );
     assertEquals("Target and replacement cannot be null", exception.getMessage());
+  }
+
+  @Test
+  void testReplaceTextCommandWithEmptyString() {
+    ReplaceTextCommand command = new ReplaceTextCommand("hello", "hi");
+    assertEquals("", command.execute(""));
+  }
+
+  @Test
+  void testReplaceTextCommandWithCaseSensitivity() {
+    ReplaceTextCommand command = new ReplaceTextCommand("Hello", "Hi");
+    assertEquals("Hi world", command.execute("Hello world"));
   }
 
 

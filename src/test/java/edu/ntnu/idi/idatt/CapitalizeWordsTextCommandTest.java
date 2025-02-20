@@ -15,4 +15,24 @@ public class CapitalizeWordsTextCommandTest {
     TextCommand cmd = new CapitalizeWordsTextCommand();
     assertEquals("Hello World", cmd.execute("hello world"));
   }
+
+  @Test
+  void testCapitalizeWordsWithMixedCase() {
+    CapitalizeWordsTextCommand command = new CapitalizeWordsTextCommand();
+    assertEquals("HELLO WORLD", command.execute("hELLO wORLD"));
+  }
+
+  @Test
+  void testCapitalizeWordsWithSpecialCharacters() {
+    CapitalizeWordsTextCommand command = new CapitalizeWordsTextCommand();
+    assertEquals("Hello @world!", command.execute("hello @world!"));
+  }
+
+  @Test
+  void testCapitalizeWordsWithNumbers() {
+    CapitalizeWordsTextCommand command = new CapitalizeWordsTextCommand();
+    assertEquals("Hello 123 World", command.execute("hello 123 world"));
+  }
+
+
 }

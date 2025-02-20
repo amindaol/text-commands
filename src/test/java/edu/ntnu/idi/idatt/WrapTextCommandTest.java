@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import edu.ntnu.idi.idatt.textCommand.TextCommand;
-
-
 public class WrapTextCommandTest {
 
   @Test
@@ -21,5 +18,23 @@ public class WrapTextCommandTest {
     WrapTextCommand command = new WrapTextCommand("(", ")");
     assertEquals("(", command.getOpening());
     assertEquals(")", command.getEnd());
+  }
+
+  @Test
+  void testWrapTextCommandWithEmptyString() {
+    WrapTextCommand command = new WrapTextCommand("<", ">");
+    assertEquals("<>", command.execute(""));
+  }
+
+  @Test
+  void testWrapTextCommandWithWhitespace() {
+    WrapTextCommand command = new WrapTextCommand("{", "}");
+    assertEquals("{ hello }", command.execute(" hello "));
+  }
+
+  @Test
+  void testWrapTextCommandWithEscapeSequences() {
+    WrapTextCommand command = new WrapTextCommand("\\", "\\");
+    assertEquals("\\hello\\", command.execute("hello"));
   }
 }
